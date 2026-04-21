@@ -108,7 +108,7 @@ function DashboardAdmin() {
                     <h6 className="fw-bold mb-3">⚡ Accès rapides</h6>
                     <div className="d-grid gap-2">
                       <button className="btn btn-outline-primary"
-                        onClick={() => navigate('/emploi-temps')}>
+                        onClick={() => navigate('/gestion-emploi-temps')}>
                         📅 Gérer les emplois du temps
                       </button>
                       <button className="btn btn-outline-success"

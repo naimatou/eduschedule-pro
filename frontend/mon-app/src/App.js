@@ -8,6 +8,7 @@ import DashboardDelegue from './pages/DashboardDelegue';
 import DashboardSurveillant from './pages/DashboardSurveillant';
 import DashboardComptable from './pages/DashboardComptable';
 import EmploiTempsPage from './pages/EmploiTempsPage';
+import GestionEmploiTemps from './pages/GestionEmploiTemps';
 import CahierTextePage from './pages/CahierTextePage';
 import VacationPage from './pages/VacationPage';
 
@@ -41,6 +42,11 @@ function AppRoutes() {
       <Route path="/emploi-temps" element={
         <PrivateRoute roles={['admin','enseignant','delegue','etudiant','surveillant','comptable']}>
           <EmploiTempsPage />
+        </PrivateRoute>
+      } />
+      <Route path="/gestion-emploi-temps" element={
+        <PrivateRoute roles={['admin']}>
+          <GestionEmploiTemps />
         </PrivateRoute>
       } />
       <Route path="/cahier-texte" element={
