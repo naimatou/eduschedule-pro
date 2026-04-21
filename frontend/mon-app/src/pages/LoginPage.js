@@ -22,31 +22,21 @@ function LoginPage() {
         'http://localhost/eduschedule-pro/backend/api/auth.php',
         { email, password }
       );
-
       connexion(response.data.utilisateur, response.data.token);
-      
-      // Redirection selon le rôle
       const role = response.data.utilisateur.role;
       navigate(`/dashboard/${role}`);
-
     } catch (error) {
-      setErreur(
-        error.response?.data?.erreur || 'Erreur de connexion'
-      );
+      setErreur(error.response?.data?.erreur || 'Erreur de connexion');
     } finally {
       setChargement(false);
     }
   };
 
   return (
-    <div className="container-fluid min-vh-100 d-flex 
-                    align-items-center justify-content-center"
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
          style={{ backgroundColor: '#1a237e' }}>
-      
       <div className="card shadow-lg" style={{ width: '400px' }}>
         <div className="card-body p-5">
-          
-          {/* Logo et titre */}
           <div className="text-center mb-4">
             <h2 className="fw-bold text-primary">
               📅 EduSchedule Pro
@@ -56,17 +46,13 @@ function LoginPage() {
             </p>
           </div>
 
-          {/* Message d'erreur */}
           {erreur && (
             <div className="alert alert-danger">{erreur}</div>
           )}
 
-          {/* Formulaire */}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label fw-semibold">
-                Email
-              </label>
+              <label className="form-label fw-semibold">Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -93,13 +79,14 @@ function LoginPage() {
 
             <button
               type="submit"
-              className="btn btn-primary w-100 py-2 fw-semibold"
+              className="btn btn-primary w-100 py-2"
+              style={{ textTransform: 'none', fontSize: '16px' }}
               disabled={chargement}
             >
               {chargement ? (
                 <>
                   <span className="spinner-border spinner-border-sm me-2" />
-                  Connexion...
+                  Connexion en cours...
                 </>
               ) : (
                 'Se connecter'
