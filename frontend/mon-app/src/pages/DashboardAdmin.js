@@ -111,6 +111,14 @@ function DashboardAdmin() {
                         onClick={() => navigate('/gestion-emploi-temps')}>
                         📅 Gérer les emplois du temps
                       </button>
+                      <button className="btn btn-outline-info"
+                        onClick={() => navigate('/gestion-classes')}>
+                        🎓 Gérer les classes
+                      </button>
+                      <button className="btn btn-outline-secondary"
+                        onClick={() => navigate('/gestion-enseignants')}>
+                        👨‍🏫 Gérer les enseignants
+                      </button>
                       <button className="btn btn-outline-success"
                         onClick={() => navigate('/cahier-texte')}>
                         📖 Cahiers de texte
