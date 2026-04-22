@@ -111,6 +111,10 @@ function DashboardAdmin() {
                         onClick={() => navigate('/gestion-emploi-temps')}>
                         📅 Gérer les emplois du temps
                       </button>
+                      <button className="btn btn-outline-dark"
+                        onClick={() => navigate('/generation-qr')}>
+                        🔲 Générer les QR Codes
+                      </button>
                       <button className="btn btn-outline-info"
                         onClick={() => navigate('/gestion-classes')}>
                         🎓 Gérer les classes

@@ -58,24 +58,18 @@ function DashboardDelegue() {
                     <div className="list-group">
                       {stats.cahiers_a_remplir.map((c, i) => (
                         <div key={i}
-                          className="list-group-item d-flex 
-                                     justify-content-between 
-                                     align-items-center">
+                          className="list-group-item d-flex justify-content-between align-items-center">
                           <div>
                             <strong>{c.matiere}</strong>
                             <br />
                             <small className="text-muted">
                               {c.titre_cours || 'Sans titre'} —{' '}
-                              {new Date(c.date_creation)
-                                .toLocaleDateString('fr-FR')}
+                              {new Date(c.date_creation).toLocaleDateString('fr-FR')}
                             </small>
                           </div>
                           <div className="d-flex gap-2">
-                            <span className="badge bg-warning">
-                              {c.statut}
-                            </span>
-                            <button
-                              className="btn btn-sm btn-primary"
+                            <span className="badge bg-warning">{c.statut}</span>
+                            <button className="btn btn-sm btn-primary"
                               onClick={() => navigate('/cahier-texte')}>
                               Remplir
                             </button>
@@ -96,13 +90,18 @@ function DashboardDelegue() {
                 <div className="card-body">
                   <h6 className="fw-bold mb-3">⚡ Accès rapides</h6>
                   <div className="d-grid gap-2">
+                    <button className="btn btn-warning"
+                      style={{ textTransform: 'none' }}
+                      onClick={() => navigate('/nouveau-cahier')}>
+                      📝 Nouveau cahier de texte
+                    </button>
                     <button className="btn btn-outline-warning"
                       onClick={() => navigate('/emploi-temps')}>
                       📅 Emploi du temps
                     </button>
                     <button className="btn btn-outline-primary"
                       onClick={() => navigate('/cahier-texte')}>
-                      📖 Cahiers de texte
+                      📖 Historique cahiers
                     </button>
                   </div>
                 </div>

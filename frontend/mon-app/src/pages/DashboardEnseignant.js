@@ -112,6 +112,11 @@ function DashboardEnseignant() {
                 <div className="card-body">
                   <h6 className="fw-bold mb-3">⚡ Accès rapides</h6>
                   <div className="d-grid gap-2">
+                    <button className="btn btn-success"
+                      style={{ textTransform: 'none' }}
+                      onClick={() => navigate('/pointage-qr')}>
+                      📱 Pointer ma présence (QR)
+                    </button>
                     <button className="btn btn-outline-success"
                       onClick={() => navigate('/cahier-texte')}>
                       📖 Mes cahiers de texte
@@ -119,6 +124,10 @@ function DashboardEnseignant() {
                     <button className="btn btn-outline-primary"
                       onClick={() => navigate('/emploi-temps')}>
                       📅 Mon emploi du temps
+                    </button>
+                    <button className="btn btn-outline-warning"
+                      onClick={() => navigate('/vacations')}>
+                      💰 Mes fiches de vacation
                     </button>
                   </div>
                 </div>

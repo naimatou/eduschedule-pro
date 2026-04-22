@@ -11,7 +11,10 @@ import EmploiTempsPage from './pages/EmploiTempsPage';
 import GestionEmploiTemps from './pages/GestionEmploiTemps';
 import GestionClasses from './pages/GestionClasses';
 import GestionEnseignants from './pages/GestionEnseignants';
+import GenerationQR from './pages/GenerationQR';
+import PointageQR from './pages/PointageQR';
 import CahierTextePage from './pages/CahierTextePage';
+import NouveauCahier from './pages/NouveauCahier';
 import VacationPage from './pages/VacationPage';
 
 function PrivateRoute({ children, roles }) {
@@ -55,10 +58,19 @@ function AppRoutes() {
       <Route path="/gestion-enseignants" element={
         <PrivateRoute roles={['admin']}><GestionEnseignants /></PrivateRoute>
       } />
+      <Route path="/generation-qr" element={
+        <PrivateRoute roles={['admin']}><GenerationQR /></PrivateRoute>
+      } />
+      <Route path="/pointage-qr" element={
+        <PrivateRoute roles={['enseignant']}><PointageQR /></PrivateRoute>
+      } />
       <Route path="/cahier-texte" element={
         <PrivateRoute roles={['admin','delegue','enseignant','surveillant']}>
           <CahierTextePage />
         </PrivateRoute>
+      } />
+      <Route path="/nouveau-cahier" element={
+        <PrivateRoute roles={['delegue']}><NouveauCahier /></PrivateRoute>
       } />
       <Route path="/vacations" element={
         <PrivateRoute roles={['admin','enseignant','surveillant','comptable']}>
